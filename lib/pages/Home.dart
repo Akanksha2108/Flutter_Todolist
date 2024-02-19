@@ -54,7 +54,7 @@ class _HomerouteState extends State<Homeroute> {
         backgroundColor: Colors.white30,
         appBar: AppBar(
           centerTitle: true,
-          title: "TO-DO LIST".text.make(),
+          title: "TO-DO  LIST".text.make(),
           elevation: 0,
         ),
         floatingActionButton: FloatingActionButton(
