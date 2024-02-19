@@ -13,11 +13,7 @@ class Homeroute extends StatefulWidget {
 final _controller = TextEditingController();
 
 class _HomerouteState extends State<Homeroute> {
-  List todolist = [
-    ["market", false],
-    ["study", false],
-    ["practice", false]
-  ];
+  List todolist = [];
 
   void createNewTask() {
     showDialog(
@@ -31,12 +27,13 @@ class _HomerouteState extends State<Homeroute> {
       },
     );
   }
-void deletefunction(int index)
-{
-  setState(() {
-    todolist.removeAt(index);
-  });
-}
+
+  void deletefunction(int index) {
+    setState(() {
+      todolist.removeAt(index);
+    });
+  }
+
   void savenewtask() {
     setState(() {
       todolist.add([_controller.text, false]);
@@ -65,7 +62,7 @@ void deletefunction(int index)
         body: ListView.builder(
           itemBuilder: (context, index) {
             return Todolist(
-              deletetask: (p0) => deletefunction(index),
+                deletetask: (p0) => deletefunction(index),
                 taskcomplete: todolist[index][1],
                 taskname: todolist[index][0],
                 onchanged: (value) => checkboxchanged(value, index));
